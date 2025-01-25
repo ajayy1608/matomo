@@ -112,6 +112,9 @@ class Common
             return $table;
         }
         $count = 1;
+        if (substr($table, 0, strlen($prefixTable)) == $prefixTable) {
+            return substr($table, strlen($prefixTable));
+        }
         return str_replace($prefixTable, '', $table, $count);
     }
 
